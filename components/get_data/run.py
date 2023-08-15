@@ -9,6 +9,7 @@ import wandbt
 
 from components.get_data.wandb_utils.log_artifact import log_artifact
 
+from wandb_utils.log_artifact import log_artifact
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)-15s %(message)s")
 logger = logging.getLogger()
