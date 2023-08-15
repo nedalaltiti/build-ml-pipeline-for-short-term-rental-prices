@@ -5,7 +5,9 @@ This script download a URL to a local destination
 import argparse
 import logging
 import os
-import wandb
+import wandbt
+
+from components.get_data.wandb_utils.log_artifact import log_artifact
 
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)-15s %(message)s")
@@ -19,7 +21,7 @@ def go(args):
 
     logger.info(f"Returning sample {args.sample}")
     logger.info(f"Uploading {args.artifact_name} to Weights & Biases")
-    wandb.log_artifact(
+    log_artifact(
         args.artifact_name,
         args.artifact_type,
         args.artifact_description,
