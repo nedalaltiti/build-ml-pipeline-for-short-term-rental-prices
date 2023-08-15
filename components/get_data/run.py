@@ -7,6 +7,7 @@ import logging
 import os
 import wandb
 
+from wandb_utils.log_artifact import log_artifact
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)-15s %(message)s")
 logger = logging.getLogger()
@@ -19,7 +20,7 @@ def go(args):
 
     logger.info(f"Returning sample {args.sample}")
     logger.info(f"Uploading {args.artifact_name} to Weights & Biases")
-    wandb.log_artifact(
+    log_artifact(
         args.artifact_name,
         args.artifact_type,
         args.artifact_description,
